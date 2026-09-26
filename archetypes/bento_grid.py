@@ -3,7 +3,7 @@ Archetype 02: Bento Grid Dashboard Slide.
 Modular multi-compartment container layout for system overviews and key pillars.
 """
 
-from pptx.util import Inches
+from pptx.util import Inches, Pt
 from pptx.enum.text import MSO_ANCHOR
 from core.tokens import M3Theme
 from core.icon_manager import get_recolored_icon_png
@@ -119,22 +119,25 @@ def render_bento_grid(slide, theme: M3Theme, data: dict):
     )
     
     # Unified 0.44" icon container
+    icon_s = 0.44
+    c3_top = c3_res.inner_bounds.top
+    c3_icon_mid_y = c3_top + Inches(icon_s / 2.0)
     M3Components.create_icon_container(
         slide, theme,
-        left=c3_res.inner_bounds.left, top=c3_res.inner_bounds.top,
-        size=0.44, icon_name=bot_l_data.get("icon", "bolt"),
+        left=c3_res.inner_bounds.left, top=c3_top,
+        size=icon_s, icon_name=bot_l_data.get("icon", "bolt"),
         color_role="tertiary", icon_color_role="on_tertiary",
         shape_type="circle"
     )
 
-    # Title beside icon, vertically centered with the icon
+    # Title beside icon, optically centered along the icon's centerline
     tb_c3_title = create_textbox(
         slide, 
         c3_res.inner_bounds.left + Inches(0.55), 
-        c3_res.inner_bounds.top, 
+        c3_icon_mid_y - Pt(15.0 * 0.72), 
         c3_res.inner_bounds.width - Inches(0.55), 
-        Inches(0.44),
-        vertical_anchor=MSO_ANCHOR.MIDDLE
+        Inches(0.35),
+        margin_zero=True
     )
     add_styled_paragraph(tb_c3_title.text_frame, bot_l_data.get("title", "表现力强调"), 
                          size_pt=15, bold=True, color_rgb=theme.rgb("on_tertiary_container"))
@@ -170,22 +173,24 @@ def render_bento_grid(slide, theme: M3Theme, data: dict):
     )
     
     # Unified 0.44" icon container
+    c4_top = c4_res.inner_bounds.top
+    c4_icon_mid_y = c4_top + Inches(icon_s / 2.0)
     M3Components.create_icon_container(
         slide, theme,
-        left=c4_res.inner_bounds.left, top=c4_res.inner_bounds.top,
-        size=0.44, icon_name=bot_r_data.get("icon", "verified"),
+        left=c4_res.inner_bounds.left, top=c4_top,
+        size=icon_s, icon_name=bot_r_data.get("icon", "verified"),
         color_role="primary_container", icon_color_role="primary",
         shape_type="circle"
     )
 
-    # Title beside icon, vertically centered with the icon
+    # Title beside icon, optically centered along the icon's centerline
     tb_c4_title = create_textbox(
         slide, 
         c4_res.inner_bounds.left + Inches(0.55), 
-        c4_res.inner_bounds.top, 
+        c4_icon_mid_y - Pt(13.5 * 0.72), 
         c4_res.inner_bounds.width - Inches(0.55), 
-        Inches(0.44),
-        vertical_anchor=MSO_ANCHOR.MIDDLE
+        Inches(0.35),
+        margin_zero=True
     )
     add_styled_paragraph(tb_c4_title.text_frame, bot_r_data.get("title", "技术指标"), 
                          size_pt=13.5, bold=True, color_rgb=theme.rgb("on_surface"))

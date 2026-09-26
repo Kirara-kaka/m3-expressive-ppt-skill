@@ -41,6 +41,17 @@ class CardResult:
     bounds: CardBounds
     inner_bounds: CardBounds
 
+def remove_shape_shadow(shape):
+    """
+    Remove default PowerPoint theme drop shadow (idx='2' in effectRef) from a shape.
+    Ensures crisp, flat Material 3 components without muddy downward blur.
+    """
+    style = shape._sp.find('{http://schemas.openxmlformats.org/presentationml/2006/main}style')
+    if style is not None:
+        effectRef = style.find('{http://schemas.openxmlformats.org/drawingml/2006/main}effectRef')
+        if effectRef is not None:
+            effectRef.set('idx', '0')
+
 class M3Components:
     """Component builder targeting Google Material 3 Expressive presentation standards."""
 
@@ -76,10 +87,12 @@ class M3Components:
             shape.fill.fore_color.rgb = theme.rgb(color_role)
             shape.line.color.rgb = theme.rgb("outline_variant")
             shape.line.width = Pt(0.75)
+            remove_shape_shadow(shape)
         else: # 'filled'
             shape.fill.solid()
             shape.fill.fore_color.rgb = theme.rgb(color_role)
             shape.line.fill.background()
+            remove_shape_shadow(shape)
 
         bounds = CardBounds(left, top, width, height)
         inner_bounds = CardBounds(
@@ -120,6 +133,7 @@ class M3Components:
         pill.fill.fore_color.rgb = theme.rgb(color_role)
         pill.line.fill.background()
         apply_pill_corner(pill)
+        remove_shape_shadow(pill)
 
         if has_icon:
             icon_png = get_recolored_icon_png(icon_name, theme.hex(on_color_role), size=128)
@@ -284,6 +298,7 @@ class M3Components:
         badge.fill.solid()
         badge.fill.fore_color.rgb = theme.rgb(color_role)
         badge.line.fill.background()
+        remove_shape_shadow(badge)
         if shape_type == "squircle":
             apply_pill_corner(badge)
         elif shape_type == "rounded":
@@ -320,6 +335,7 @@ class M3Components:
         track.fill.fore_color.rgb = theme.rgb(track_color_role)
         track.line.fill.background()
         apply_pill_corner(track)
+        remove_shape_shadow(track)
         
         # 2. Foreground Active Indicator
         clamped_prog = max(0.01, min(1.0, progress))
@@ -329,6 +345,7 @@ class M3Components:
         indicator.fill.fore_color.rgb = theme.rgb(indicator_color_role)
         indicator.line.fill.background()
         apply_pill_corner(indicator)
+        remove_shape_shadow(indicator)
         
         return (track, indicator)
 
@@ -358,9 +375,9 @@ class M3Components:
         b_size_emu = Inches(badge_size) if isinstance(badge_size, (int, float)) and badge_size < 100 else badge_size
         spacing_emu = Inches(item_spacing_in) if isinstance(item_spacing_in, (int, float)) and item_spacing_in < 100 else item_spacing_in
 
-        tb_h_emu = Inches(0.32)
-        # Shift badge UP by Pt(3.0) to optically and geometrically align with font baseline/ascent in PowerPoint
-        badge_offset_y = (tb_h_emu - b_size_emu) // 2 - Pt(3.0)
+        # Optical offset for single-line East Asian text in PowerPoint:
+        # At zero-margins, the optical midline of East Asian characters lands at ~0.72 * font_size below textbox top.
+        tb_offset_emu = Pt(font_size_pt * 0.72)
 
         for item in items:
             if isinstance(item, dict):
@@ -374,11 +391,13 @@ class M3Components:
                 item_bg = icon_bg_role
                 item_fg = icon_fg_role
 
-            # Micro circle badge with icon - vertically centered with text line
+            row_mid_y = cur_y + (b_size_emu // 2)
+
+            # Micro circle badge with icon - centered at row_mid_y
             M3Components.create_icon_container(
                 slide, theme,
                 left=l_emu, 
-                top=cur_y + badge_offset_y,
+                top=cur_y,
                 size=badge_size,
                 icon_name=item_icon,
                 color_role=item_bg,
@@ -386,7 +405,7 @@ class M3Components:
                 shape_type="circle"
             )
 
-            # Aligned text box with vertical centering anchor
+            # Aligned text box - optical midline lands exactly on row_mid_y
             text_offset_in = badge_size + 0.10
             text_offset_emu = Inches(text_offset_in)
             text_left = l_emu + text_offset_emu
@@ -395,10 +414,10 @@ class M3Components:
             tb = create_textbox(
                 slide, 
                 left=text_left, 
-                top=cur_y, 
+                top=row_mid_y - tb_offset_emu, 
                 width=text_w, 
-                height=tb_h_emu,
-                vertical_anchor=MSO_ANCHOR.MIDDLE
+                height=Inches(0.25),
+                margin_zero=True
             )
             add_styled_paragraph(tb.text_frame, text, size_pt=font_size_pt, bold=bold_text,
                                  color_rgb=theme.rgb(text_color_role))
