@@ -188,7 +188,7 @@ def render_bento_grid(slide, theme: M3Theme, data: dict):
         vertical_anchor=MSO_ANCHOR.MIDDLE
     )
     add_styled_paragraph(tb_c4_title.text_frame, bot_r_data.get("title", "技术指标"), 
-                         size_pt=15, bold=True, color_rgb=theme.rgb("on_surface"))
+                         size_pt=13.5, bold=True, color_rgb=theme.rgb("on_surface"))
     
     # Checklist with increased font size and line spacing to balance whitespace
     bullets = bot_r_data.get("bullets", ["纯原生矢量对象", "抗字体降级体系", "100% 自由编辑修改"])

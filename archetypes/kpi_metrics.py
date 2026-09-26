@@ -118,9 +118,10 @@ def render_kpi_metrics(slide, theme: M3Theme, data: dict):
             )
 
         # Bottom Description
+        desc_color = "on_primary_container" if is_highlight else "on_surface_variant"
         tb_desc = create_textbox(slide, inner.left, inner.top + Inches(1.88), inner.width, Inches(0.65))
         add_styled_paragraph(tb_desc.text_frame, m.get("desc", ""), size_pt=SCALE_BODY_SMALL,
-                             color_rgb=theme.rgb("on_surface_variant"), space_before_pt=2)
+                             color_rgb=theme.rgb(desc_color), space_before_pt=2)
 
     # -------------------------------------------------------------
     # Bottom Takeaway Summary Banner

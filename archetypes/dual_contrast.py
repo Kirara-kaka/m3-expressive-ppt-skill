@@ -212,7 +212,8 @@ def render_dual_contrast(slide, theme: M3Theme, data: dict = None):
         metric_value=r_data.get("metric_val", "86.4%"),
         metric_label=r_data.get("metric_label", "关键指标提升"),
         trend_str=r_data.get("trend", "+2.5x 跃迁"),
-        color_role="on_primary", bg_role="primary"
+        color_role="on_primary", bg_role="primary",
+        label_color_role="on_primary"
     )
 
     # -------------------------------------------------------------

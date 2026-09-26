@@ -165,7 +165,8 @@ class M3Components:
                            metric_label: str,
                            trend_str: Optional[str] = None,
                            color_role: str = "primary",
-                           bg_role: str = "surface_container_lowest") -> any:
+                           bg_role: str = "surface_container_lowest",
+                           label_color_role: Optional[str] = None) -> any:
         """
         Create a high-impact KPI Hero Metric Card with generous whitespace and zero overlap.
         """
@@ -179,8 +180,12 @@ class M3Components:
         chip_w_in = 0.0
         if trend_str:
             is_positive = "+" in trend_str or "↑" in trend_str
-            chip_color = "tertiary_container" if is_positive else "surface_container_high"
-            chip_on_color = "on_tertiary_container" if is_positive else "on_surface_variant"
+            if bg_role in ["primary", "secondary", "tertiary", "inverse_surface"]:
+                chip_color = "tertiary_container" if is_positive else "surface_bright"
+                chip_on_color = "on_tertiary_container" if is_positive else "on_surface"
+            else:
+                chip_color = "tertiary_container" if is_positive else "surface_container_high"
+                chip_on_color = "on_tertiary_container" if is_positive else "on_surface_variant"
             
             zh_c = sum(1 for c in trend_str if '\u4e00' <= c <= '\u9fff')
             en_c = len(trend_str) - zh_c
@@ -226,10 +231,32 @@ class M3Components:
         add_styled_paragraph(tb_num.text_frame, metric_value, size_pt=SCALE_DISPLAY_LARGE, bold=True, 
                              color_rgb=theme.rgb(color_role))
         
+        # Determine contrast-compliant label color
+        if label_color_role is None:
+            if bg_role in ["primary", "secondary", "tertiary", "inverse_surface"] or (color_role and color_role.startswith("on_")):
+                if bg_role == "primary" or color_role == "on_primary":
+                    label_color_role = "on_primary"
+                elif bg_role == "secondary" or color_role == "on_secondary":
+                    label_color_role = "on_secondary"
+                elif bg_role == "tertiary" or color_role == "on_tertiary":
+                    label_color_role = "on_tertiary"
+                elif bg_role == "inverse_surface":
+                    label_color_role = "inverse_on_surface"
+                else:
+                    label_color_role = color_role
+            elif bg_role == "primary_container":
+                label_color_role = "on_primary_container"
+            elif bg_role == "tertiary_container":
+                label_color_role = "on_tertiary_container"
+            elif bg_role == "secondary_container":
+                label_color_role = "on_secondary_container"
+            else:
+                label_color_role = "on_surface_variant"
+
         # 2. Metric Label (under number, generous spacing to prevent overlap)
         tb_lbl = create_textbox(slide, card_res.inner_bounds.left, card_res.inner_bounds.top + Inches(0.56), tb_w, Inches(0.38))
         add_styled_paragraph(tb_lbl.text_frame, metric_label, size_pt=SCALE_BODY_SMALL, bold=False, 
-                             color_rgb=theme.rgb("on_surface_variant"))
+                             color_rgb=theme.rgb(label_color_role))
 
         return card_res
 
@@ -332,7 +359,8 @@ class M3Components:
         spacing_emu = Inches(item_spacing_in) if isinstance(item_spacing_in, (int, float)) and item_spacing_in < 100 else item_spacing_in
 
         tb_h_emu = Inches(0.32)
-        badge_offset_y = (tb_h_emu - b_size_emu) // 2
+        # Shift badge UP by Pt(3.0) to optically and geometrically align with font baseline/ascent in PowerPoint
+        badge_offset_y = (tb_h_emu - b_size_emu) // 2 - Pt(3.0)
 
         for item in items:
             if isinstance(item, dict):
