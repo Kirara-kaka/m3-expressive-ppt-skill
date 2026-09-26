@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary & Scratch scripts / exports
+scratch/
+temp_icons/
+test_*.png
+test_*.svg
+test_*.pptx
+material_3_expressive_sample.png
+material_3_expressive_sample.pptx
+
+# Generated output presentations
+tests/output/
+*.pptx
+*.png
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

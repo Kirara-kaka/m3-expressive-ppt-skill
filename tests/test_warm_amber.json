@@ -1,0 +1,139 @@
+{
+  "config": {
+    "title": "新一代消费科技与硬件生态战略发布",
+    "preset_theme": "warm_amber",
+    "is_dark": false
+  },
+  "slides": [
+    {
+      "archetype": "cover_hero",
+      "category": "HARDWARE & CONSUMER TECH 2026",
+      "title": "新一代智能穿戴与硬件生态：\n从交互终端到环境感知计算",
+      "subtitle": "依循 Google Material 3 Expressive 设计规范，打造温暖、活力与无感连接的未来体验",
+      "speaker": "硬件生态事业群负责人",
+      "date": "2026 全球科技创新大会",
+      "org": "Consumer Intelligence Group",
+      "hero_highlight": "AMBIENT-2026",
+      "hero_badge_text": "全场景环境智能生态"
+    },
+    {
+      "archetype": "bento_grid",
+      "category": "GLOBAL ECOSYSTEM",
+      "title": "全景看板：硬件生态与供应链协同分舱",
+      "subtitle": "28dp Bento 容器模块化架构，将复杂供应链、软硬协同与用户感知收拢于统一视野",
+      "hero_card": {
+        "chip": "INTELLIGENCE CORE",
+        "icon": "auto_awesome",
+        "title": "环境智能中枢芯片",
+        "subtitle": "Ambient Neural Processing Unit",
+        "desc": "以微瓦级超低功耗常驻待命，全天候实时感知环境声音、光线与空间手势动作。",
+        "metric_val": "0.15 mW",
+        "metric_label": "全天候静态感知功耗",
+        "trend": "突破行业功耗极限"
+      },
+      "card_top": {
+        "icon": "devices",
+        "title": "多模态终端互联",
+        "desc": "手表、眼镜、耳机与智慧家居无感握手，空间音频与上下文无缝流转。",
+        "chips": ["超宽带 UWB 直连", "零触碰配对", "空间音频协同"]
+      },
+      "card_bot_left": {
+        "icon": "bolt",
+        "stat": "42 天",
+        "title": "超长续航",
+        "desc": "自研光电混合充电管理。"
+      },
+      "card_bot_right": {
+        "icon": "verified",
+        "title": "绿色可再生制造",
+        "bullets": ["100% 航空级再生铝合金", "生物可降解包装材料", "碳中和全流程绿电追踪"]
+      }
+    },
+    {
+      "archetype": "process_roadmap",
+      "category": "COMMERCIALIZATION MILESTONES",
+      "title": "全球规模化量产与商业化落地路线图",
+      "subtitle": "从芯片样片试制、工业工程验证，到全球首发量产与全球渠道铺设",
+      "phases": [
+        {
+          "phase_num": "01",
+          "name": "工程样机验证",
+          "time": "2025 Q3 · 完成",
+          "status": "COMPLETED",
+          "icon": "check",
+          "deliverables": ["3nm 架构样片点亮", "毫米级天线射频调优", "跌落与防水环境测试"],
+          "kpi_chip": "工程良率 92%"
+        },
+        {
+          "phase_num": "02",
+          "name": "试产与认证",
+          "time": "2025 Q4 · 完成",
+          "status": "COMPLETED",
+          "icon": "bolt",
+          "deliverables": ["全球 38 国无线电合规", "试产线自动化良品调测", "开发者预览版硬件封样"],
+          "kpi_chip": "合规 100% 通过"
+        },
+        {
+          "phase_num": "03",
+          "name": "全球量产爬坡",
+          "time": "2026 Q1 · 进行中",
+          "status": "ACTIVE",
+          "icon": "layers",
+          "deliverables": ["百万级自动化总装线", "关键元器件多源保供", "海空运物流专线联运"],
+          "kpi_chip": "日产 50,000 台"
+        },
+        {
+          "phase_num": "04",
+          "name": "全渠道开售",
+          "time": "2026 Q2 · 即将到来",
+          "status": "UPCOMING",
+          "icon": "rocket",
+          "deliverables": ["全球旗舰体验店首发", "线上电商极速现货发运", "全生命周期焕新服务"],
+          "kpi_chip": "目标首周 200 万"
+        }
+      ]
+    },
+    {
+      "archetype": "kpi_metrics",
+      "category": "MARKET PERFORMANCE",
+      "title": "首发市场表现与核心运营成果大屏",
+      "subtitle": "首发盲订预售超额打破历代记录，用户复购留存与净推荐值领跑高端市场",
+      "metrics": [
+        {
+          "value": "240 万+",
+          "label": "全渠道盲订预售订单",
+          "trend": "+185% 破历史纪录",
+          "icon": "shopping_cart",
+          "desc": "开启预约首日即告售罄",
+          "highlight": false
+        },
+        {
+          "value": "96.8%",
+          "label": "首批用户 NPS 净推荐值",
+          "trend": "高端智能品类第一",
+          "icon": "star",
+          "desc": "做工与 M3 交互极受青睐",
+          "highlight": true
+        },
+        {
+          "value": "84.5%",
+          "label": "多设备联动生态留存率",
+          "trend": "+32% 生态强绑定",
+          "icon": "hub",
+          "desc": "平均每位用户关联 3.2 台设备",
+          "highlight": false
+        },
+        {
+          "value": "3.2 倍",
+          "label": "单品研发投入产出比",
+          "trend": "实现良性经营正循环",
+          "icon": "trending_up",
+          "desc": "规模化平台降本成效显著",
+          "highlight": false
+        }
+      ],
+      "takeaway_badge": "COMMERCIAL SUMMARY",
+      "takeaway_text": "商业洞察：新一代硬件生态凭借环境智能计算与温润表现力美学，成功构建了高粘性的全场景护城河，为品牌确立了面向未来十年的战略领跑地位。"
+    }
+  ]
+}

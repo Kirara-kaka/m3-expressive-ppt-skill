@@ -1,0 +1,167 @@
+{
+  "config": {
+    "title": "2026 AI Native OS 产品战略发布",
+    "preset_theme": "digital_lavender",
+    "is_dark": false
+  },
+  "slides": [
+    {
+      "archetype": "cover_hero",
+      "category": "STRATEGIC PRODUCT LAUNCH 2026",
+      "title": "AI-Native Operating System:\n从指令驱动到意图感知的下一代交互",
+      "subtitle": "融合 Google M3 Expressive 设计哲学、多模态端侧大模型与零延迟分布式代理底座",
+      "speaker": "Chief System Architect",
+      "date": "2026 年秋季特别发布会",
+      "org": "Next-Gen AI Systems Laboratory",
+      "hero_highlight": "AI-OS 2026",
+      "hero_badge_text": "全场景意图感知计算系统"
+    },
+    {
+      "archetype": "bento_grid",
+      "category": "SYSTEM PANORAMA",
+      "title": "全景看板：AI-OS 核心系统分舱架构",
+      "subtitle": "依循 28dp Bento 容器黄金律与高活力双强调色，构建模块化、高凝聚的系统服务视图",
+      "hero_card": {
+        "chip": "CORE AGENTIC CORE",
+        "icon": "psychology",
+        "title": "端侧神经推理引擎",
+        "subtitle": "On-Device Neural Co-Processor",
+        "desc": "基于端侧 7B 异构混合专家模型，无需联网即可毫秒级理解用户复杂意图与上下文。",
+        "metric_val": "1.2 ms",
+        "metric_label": "端侧意图唤醒时延",
+        "trend": "业界首创 100% 离线隐私"
+      },
+      "card_top": {
+        "icon": "hub",
+        "title": "跨设备协同总线",
+        "desc": "毫秒级发现并连接手机、平板、桌面与车载智能终端，统一算力池化调度。",
+        "chips": ["全域近场感知", "零拷贝流转", "异构算力共享"]
+      },
+      "card_bot_left": {
+        "icon": "bolt",
+        "stat": "< 0.8W",
+        "title": "超低功耗常驻",
+        "desc": "定制微内核动态休眠调频。"
+      },
+      "card_bot_right": {
+        "icon": "verified",
+        "title": "可信执行环境",
+        "bullets": ["硬件级安全隔离飞地", "全链路生物特征加密", "100% 用户数据主权"]
+      }
+    },
+    {
+      "archetype": "feature_list",
+      "category": "PRODUCT CAPABILITIES",
+      "title": "三大核心交互支柱与体验跃迁",
+      "subtitle": "打破传统沉闷视窗与死板图标，以感知色彩与自适应微动效重塑人机连接",
+      "features": [
+        {
+          "tag": "PILLAR 01",
+          "icon": "auto_awesome",
+          "title": "意图直达交互",
+          "subtitle": "Zero-UI Context Awareness",
+          "desc": "系统主动感知用户当前任务流，在恰当时机呈现最契合的建议与下一步动作胶囊。",
+          "points": ["消除 80% 菜单层级寻址", "跨应用操作一键自动串联", "支持自然口语模糊指令"],
+          "badge": "革命性交互",
+          "highlight": false
+        },
+        {
+          "tag": "PILLAR 02",
+          "icon": "palette",
+          "title": "M3 Expressive 美学",
+          "subtitle": "Dual-Chroma Dynamic Theming",
+          "desc": "基于 Google HCT 算法提取高对比度双强调色，随时间与场景呼吸变化。",
+          "points": ["28dp 核心容器大圆角", "9999px 全胶囊药丸交互", "无黑脏阴影纯净色调浸润"],
+          "badge": "设计语言领军",
+          "highlight": true
+        },
+        {
+          "tag": "PILLAR 03",
+          "icon": "shield",
+          "title": "零信任隐私壁垒",
+          "subtitle": "Hardware-Enforced Privacy",
+          "desc": "所有敏感上下文与模型权重均封闭运行在硬件安全飞地中，永不上传云端。",
+          "points": ["端侧差分隐私保护", "物理级麦克风/摄像头开关", "透明操作审计日志"],
+          "badge": "金融级防御",
+          "highlight": false
+        }
+      ]
+    },
+    {
+      "archetype": "dual_contrast",
+      "category": "EXPERIENCE COMPARISON",
+      "title": "传统桌面视窗系统 vs AI-Native OS 深度对比",
+      "subtitle": "对比机械被动的传统图标寻找方式与主动智能意图感知的代际飞跃",
+      "left_plan": {
+        "chip": "LEGACY GUI",
+        "title": "传统应用孤岛与被动操作",
+        "desc": "用户必须在数十个割裂的应用窗口中反复切换复制粘贴，认知负荷极其沉重。",
+        "points": [
+          "应用间信息割裂，形成严重数据孤岛",
+          "层层嵌套的深级菜单，寻址繁琐费时",
+          "冷灰沉闷的四方直角，缺乏生命力",
+          "排版死板，无法根据环境自适应调整"
+        ],
+        "metric_val": "42%",
+        "metric_label": "碎片化应用切换时间消耗",
+        "trend": "传统交互瓶颈"
+      },
+      "right_plan": {
+        "chip": "M3 AI-OS EVOLVED",
+        "title": "流式意图卡片与统一画布",
+        "desc": "打破应用边界，以 28dp Bento 动态卡片流承载所有内容与服务，直达用户目标。",
+        "points": [
+          "跨应用意图无缝流转，彻底打破孤岛",
+          "自适应动态卡片根据任务优先级呼吸重组",
+          "Material 3 Expressive 高活力双强调色",
+          "100% 矢量现代几何无衬线抗降级排版"
+        ],
+        "metric_val": "3.8x",
+        "metric_label": "端到端复杂任务完成提速",
+        "trend": "+280% 效能跃迁"
+      }
+    },
+    {
+      "archetype": "kpi_metrics",
+      "category": "BENCHMARK PERFORMANCE",
+      "title": "关键性能与用户体验基准测试成果",
+      "subtitle": "通过深度软硬协同与微内核调优，在功耗、时延与用户直觉满意度上斩获全优",
+      "metrics": [
+        {
+          "value": "99.98%",
+          "label": "意图语义理解准确率",
+          "trend": "+4.8% 突破行业天花板",
+          "icon": "psychology",
+          "desc": "基于千亿级混合专家自监督微调",
+          "highlight": false
+        },
+        {
+          "value": "1.2 ms",
+          "label": "冷启动意图响应时延",
+          "trend": "-85% 延迟压缩",
+          "icon": "speed",
+          "desc": "端侧 NPU 硬件加速算子直通",
+          "highlight": true
+        },
+        {
+          "value": "18.5 h",
+          "label": "全天候重度续航时间",
+          "trend": "+45% 续航延长",
+          "icon": "battery_charging_full",
+          "desc": "自适应功耗动态感知调度器",
+          "highlight": false
+        },
+        {
+          "value": "94.6%",
+          "label": "用户净推荐值 (NPS)",
+          "trend": "创历史最高满意度",
+          "icon": "star",
+          "desc": "流畅直觉的 M3 交互备受青睐",
+          "highlight": false
+        }
+      ],
+      "takeaway_badge": "LEADERSHIP TAKEAWAY",
+      "takeaway_text": "战略结论：AI-OS 成功跨越了从‘软件工具’到‘智能协作体’的鸿沟，以 1.2ms 极致响应与 M3 表现力美学确立了下一代操作系统的新范式。"
+    }
+  ]
+}
