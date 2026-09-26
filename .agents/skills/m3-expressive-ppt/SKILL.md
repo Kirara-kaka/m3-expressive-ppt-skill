@@ -100,6 +100,10 @@ The engine computes dynamic, perceptually uniform color schemes via Google's `ma
    - Primary: `#8C5000` (Warm Cognac)
    - Tertiary: `#006399` (Electric Ocean)
    - Canvas: `#FFF5EB`
+5. **`electric_violet`** (未来先锋 · 蓝紫色调与高能柠檬绿):
+   - Primary: `#5854A8` (Deep Royal Blue-Violet, Seed `#5B4DFF`)
+   - Tertiary: `#4A670B` (High-Energy Lime Green)
+   - Canvas: `#F8F1FF` (Luminous Lilac Tint)
 
 ---
 

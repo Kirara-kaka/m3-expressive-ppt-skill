@@ -127,6 +127,7 @@ PRESET_THEMES = {
     "electric_mint": lambda is_dark=False: generate_theme("#006C4A", is_dark, "Electric Mint & Charcoal"),
     "digital_lavender": lambda is_dark=False: generate_theme("#6E5676", is_dark, "Digital Lavender & Berry"),
     "warm_amber": lambda is_dark=False: generate_theme("#8C5000", is_dark, "Warm Amber & Forest"),
+    "electric_violet": lambda is_dark=False: generate_theme("#5B4DFF", is_dark, "Electric Blue-Violet & Lime Glow"),
 }
 
 def get_preset_theme(preset_key: str = "indigo_coral", is_dark: bool = False) -> M3Theme:
