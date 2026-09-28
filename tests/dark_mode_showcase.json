@@ -1,0 +1,187 @@
+{
+  "config": {
+    "title": "Dark Mode 端到端验证 — 全版式矩阵",
+    "preset_theme": "indigo_coral",
+    "is_dark": true
+  },
+  "slides": [
+    {
+      "archetype": "cover_hero",
+      "category": "DARK MODE VALIDATION 2026",
+      "title": "暗色模式全版式验证：\nMaterial 3 Expressive 深色画布",
+      "subtitle": "端到端渲染检查：色阶映射、对比度、可读性与视觉层级",
+      "speaker": "质量验证 · 渲染引擎",
+      "date": "2026 年秋季",
+      "org": "M3 Expressive QA Team",
+      "hero_highlight": "DARK",
+      "hero_badge_text": "暗色模式验证"
+    },
+    {
+      "archetype": "bento_grid",
+      "category": "SYSTEM OVERVIEW",
+      "title": "全景看板：暗色 Bento 便当盒分舱",
+      "subtitle": "验证 Surface Container 暗色五级色阶梯度与卡片层级关系",
+      "hero_card": {
+        "chip": "DARK CANVAS", "icon": "auto_awesome",
+        "title": "HCT 暗色感知色彩", "subtitle": "Dark Scheme Tonal Mapping",
+        "desc": "验证 Tone 6→10→12→17→22 暗色表面容器色阶是否正确推导。",
+        "metric_val": "99.2%", "metric_label": "暗色色阶精度", "trend": "+全量验证"
+      },
+      "card_top": {
+        "icon": "grid_view", "title": "容器层级差异化",
+        "desc": "暗色背景下卡片边界是否清晰可辨，不会融成一片。",
+        "chips": ["Tone 4 最深", "Tone 12 中阶", "Tone 22 高亮"]
+      },
+      "card_bot_left": {
+        "icon": "bolt", "stat": "7:1",
+        "title": "对比度达标", "desc": "白字在深色底座上对比度需达 WCAG AA。"
+      },
+      "card_bot_right": {
+        "icon": "verified", "title": "文字可读性",
+        "bullets": ["on_surface: Tone 90", "on_surface_variant: Tone 80", "outline: Tone 60"]
+      }
+    },
+    {
+      "archetype": "process_roadmap",
+      "category": "VALIDATION ROADMAP",
+      "title": "暗色模式验证路线图",
+      "subtitle": "四阶段系统验证：从色阶推导到全版式渲染检查",
+      "phases": [
+        {
+          "phase_num": "01", "name": "色阶推导验证", "time": "Step 1", "status": "COMPLETED",
+          "deliverables": ["Dark Surface Tone 6→22", "Primary Tone 80", "Tertiary Tone 80"],
+          "kpi_chip": "色阶正确"
+        },
+        {
+          "phase_num": "02", "name": "对比度审查", "time": "Step 2", "status": "COMPLETED",
+          "deliverables": ["WCAG AA 4.5:1 达标", "深色底座白字可读", "药丸标签可辨"],
+          "kpi_chip": "对比度通过"
+        },
+        {
+          "phase_num": "03", "name": "全版式渲染", "time": "Step 3", "status": "ACTIVE",
+          "deliverables": ["8 大版式暗色渲染", "花瓣徽章暗色适配", "光晕与暗色画布融合"],
+          "kpi_chip": "渲染中"
+        },
+        {
+          "phase_num": "04", "name": "跨主题交叉", "time": "Step 4", "status": "UPCOMING",
+          "deliverables": ["5 款预制主题暗色", "自定义种子暗色", "一致性验收"],
+          "kpi_chip": "待启动"
+        }
+      ]
+    },
+    {
+      "archetype": "dual_contrast",
+      "category": "LIGHT VS DARK COMPARISON",
+      "title": "亮色模式 vs 暗色模式 色阶对照",
+      "subtitle": "对比两种模式下的 Surface Container 色阶映射与视觉层级差异",
+      "left_plan": {
+        "chip": "LIGHT MODE",
+        "title": "亮色模式色阶体系",
+        "desc": "基于 Tone 90→100 高亮表面，深色文字。",
+        "points": [
+          "Surface: Tone 98（近白）",
+          "Primary: Tone 40（中饱和深色）",
+          "on_surface: Tone 10（近黑文字）"
+        ],
+        "metric_val": "Tone 40", "metric_label": "Primary 色阶基准", "trend": "亮色标准"
+      },
+      "right_plan": {
+        "chip": "DARK MODE",
+        "title": "暗色模式色阶体系",
+        "desc": "基于 Tone 6→22 深色表面，高亮文字。",
+        "points": [
+          "Surface: Tone 6（近黑）",
+          "Primary: Tone 80（高亮浅色）",
+          "on_surface: Tone 90（近白文字）"
+        ],
+        "metric_val": "Tone 80", "metric_label": "Primary 色阶基准", "trend": "暗色反转"
+      }
+    },
+    {
+      "archetype": "kpi_metrics",
+      "category": "DARK MODE METRICS",
+      "title": "暗色模式关键渲染指标",
+      "subtitle": "量化检验色阶精度、对比度达标率、文字可读性与层级清晰度",
+      "metrics": [
+        {"value": "Tone 80", "label": "Primary 暗色色阶", "trend": "反转自 Tone 40", "icon": "palette", "desc": "HCT 暗色主色", "highlight": false},
+        {"value": "7.2:1", "label": "文字对比度", "trend": "超 WCAG AA", "icon": "spellcheck", "desc": "on_surface vs surface", "highlight": true},
+        {"value": "5 级", "label": "Surface 色阶梯度", "trend": "Tone 4→22", "icon": "layers", "desc": "层级区分清晰", "highlight": false},
+        {"value": "100%", "label": "图标重着色", "trend": "全量适配", "icon": "verified", "desc": "暗色图标可见", "highlight": false}
+      ],
+      "takeaway_badge": "VALIDATION RESULT",
+      "takeaway_text": "暗色模式下所有核心指标均需达到生产级标准，确保与亮色模式同等的信息传达效率。"
+    },
+    {
+      "archetype": "feature_list",
+      "category": "DARK CAPABILITIES",
+      "title": "暗色模式三大核心验证维度",
+      "subtitle": "色彩精度、排版抗降级与几何一致性的暗色适配检验",
+      "features": [
+        {
+          "tag": "DIMENSION 01", "icon": "auto_awesome", "title": "HCT 暗色色阶精度",
+          "subtitle": "Dark Tonal Accuracy",
+          "desc": "验证 SchemeExpressive 暗色分支的 Tone 映射是否与官方规范一致。",
+          "points": ["Primary Tone 80 高亮", "Container Tone 30 深色", "Surface Tone 6 近黑"],
+          "badge": "色彩引擎", "highlight": false
+        },
+        {
+          "tag": "DIMENSION 02", "icon": "grid_view", "title": "暗色几何与层级",
+          "subtitle": "Dark Container Hierarchy",
+          "desc": "暗色下 28dp 圆角卡片与 Surface 五级色阶是否形成清晰的视觉层级。",
+          "points": ["卡片边界可辨识", "嵌套卡片色阶区隔", "药丸胶囊高对比"],
+          "badge": "层级体系", "highlight": true
+        },
+        {
+          "tag": "DIMENSION 03", "icon": "verified", "title": "排版与图标适配",
+          "subtitle": "Dark Typography & Icons",
+          "desc": "暗色模式下文字颜色反转为高亮浅色，图标动态重着色保持可见性。",
+          "points": ["on_surface Tone 90 近白", "双字族注入不受影响", "矢量图标自动适配"],
+          "badge": "排版引擎", "highlight": false
+        }
+      ]
+    },
+    {
+      "archetype": "quote_takeaway",
+      "category": "DESIGN PHILOSOPHY",
+      "title": "暗色模式设计哲学",
+      "subtitle": "黑暗中绽放的 Material 3 表现力",
+      "quote_text": "\u201c优秀的暗色模式不是简单的颜色反转，而是重新构建光与影的叙事。在暗色画布上，每一个高亮元素都成为引导视觉动线的灯塔。\u201d",
+      "quote_author": "Material Design Core Team",
+      "quote_role": "Dark Theme Architecture · Google Design",
+      "pillars": [
+        {"icon": "auto_awesome", "title": "色阶反转而非简单取反", "desc": "HCT Tone 映射确保感知均匀性在暗色下依然成立。"},
+        {"icon": "grid_view", "title": "层级通过亮度而非阴影", "desc": "越高层级的容器使用越高 Tone 值的表面色。"},
+        {"icon": "verified", "title": "文字高亮保持可读", "desc": "on_surface 使用 Tone 90 确保 WCAG AAA 对比度。"}
+      ]
+    },
+    {
+      "archetype": "team_showcase",
+      "category": "VALIDATION TEAM",
+      "title": "暗色模式验证专家团队",
+      "subtitle": "验证 Team Showcase 版式在暗色画布下的花瓣徽章、技能标签渲染效果",
+      "members": [
+        {
+          "name": "Dr. Aria Chen",
+          "role": "COLOR SCIENCE LEAD",
+          "icon": "psychology",
+          "desc": "主导 HCT 暗色色阶推导算法验证与 WCAG 对比度审计。",
+          "tags": ["HCT 暗色", "对比度审计", "色彩感知", "WCAG AAA"]
+        },
+        {
+          "name": "Kai Nakamura",
+          "role": "DARK RENDERING ENGINE",
+          "icon": "palette",
+          "desc": "负责 DrawingML 暗色容器渲染、阴影清理与图标动态重着色。",
+          "tags": ["DrawingML", "暗色渲染", "图标适配", "矢量引擎"]
+        },
+        {
+          "name": "Sofia Martinez",
+          "role": "CROSS-THEME QA",
+          "icon": "account_tree",
+          "desc": "执行 5 款预制主题 × Light/Dark 双模式的交叉兼容性测试。",
+          "tags": ["交叉验证", "主题矩阵", "回归测试", "自动化"]
+        }
+      ]
+    }
+  ]
+}

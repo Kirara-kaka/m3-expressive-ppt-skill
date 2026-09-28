@@ -86,6 +86,17 @@ def generate_theme(seed_hex: str, is_dark: bool = False, name: str = "Custom Exp
             "on_surface_variant": argb_to_hex(scheme.neutral_variant_palette.tone(30)),
             "outline": argb_to_hex(scheme.neutral_variant_palette.tone(50)),
             "outline_variant": argb_to_hex(scheme.neutral_variant_palette.tone(80)),
+
+            # Inverse (for snackbars, tooltips, special overlays)
+            "inverse_surface": argb_to_hex(scheme.neutral_palette.tone(20)),
+            "inverse_on_surface": argb_to_hex(scheme.neutral_palette.tone(95)),
+            "inverse_primary": argb_to_hex(scheme.primary_palette.tone(80)),
+
+            # Error
+            "error": argb_to_hex(scheme.error_palette.tone(40)),
+            "on_error": argb_to_hex(scheme.error_palette.tone(100)),
+            "error_container": argb_to_hex(scheme.error_palette.tone(90)),
+            "on_error_container": argb_to_hex(scheme.error_palette.tone(10)),
         }
     else:
         tokens = {
@@ -117,6 +128,17 @@ def generate_theme(seed_hex: str, is_dark: bool = False, name: str = "Custom Exp
             "on_surface_variant": argb_to_hex(scheme.neutral_variant_palette.tone(80)),
             "outline": argb_to_hex(scheme.neutral_variant_palette.tone(60)),
             "outline_variant": argb_to_hex(scheme.neutral_variant_palette.tone(30)),
+
+            # Inverse (for snackbars, tooltips, special overlays)
+            "inverse_surface": argb_to_hex(scheme.neutral_palette.tone(90)),
+            "inverse_on_surface": argb_to_hex(scheme.neutral_palette.tone(20)),
+            "inverse_primary": argb_to_hex(scheme.primary_palette.tone(40)),
+
+            # Error
+            "error": argb_to_hex(scheme.error_palette.tone(80)),
+            "on_error": argb_to_hex(scheme.error_palette.tone(20)),
+            "error_container": argb_to_hex(scheme.error_palette.tone(30)),
+            "on_error_container": argb_to_hex(scheme.error_palette.tone(90)),
         }
 
     return M3Theme(name=name, is_dark=is_dark, seed_hex=seed_hex, tokens=tokens)

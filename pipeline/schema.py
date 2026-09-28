@@ -22,6 +22,7 @@ VALID_THEME_PRESETS = [
     "electric_mint",
     "digital_lavender",
     "warm_amber",
+    "electric_violet",
 ]
 
 @dataclass
